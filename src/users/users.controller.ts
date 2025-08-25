@@ -23,7 +23,7 @@ export class UsersController {
 
   @Get()
   async findAll(@Query() query: GetUsersQueryDto): Promise<PaginatedUsersDto> {
-    return this.usersService.findAll(query.limit, query.offset, query.roleIds);
+    return this.usersService.findAll(query.limit, query.offset, query.roleId);
   }
 
   @Get(':id')

@@ -78,10 +78,9 @@ export class GetUsersQueryDto {
   limit?: number = 10;
 
   @IsOptional()
-  @IsArray()
   @Type(() => Number)
-  @IsNumber({}, { each: true })
-  roleIds?: number[];
+  @IsNumber()
+  roleId?: number;
 }
 
 export class PaginatedUsersDto {

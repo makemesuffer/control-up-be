@@ -26,16 +26,16 @@ export class UsersService {
   async findAll(
     limit: number = 10,
     offset: number = 0,
-    roleIds?: number[],
+    roleId?: number,
   ): Promise<PaginatedUsersDto> {
     const queryBuilder = this.userRepository
       .createQueryBuilder('user')
       .leftJoinAndSelect('user.roles', 'role');
 
-    if (roleIds && roleIds.length > 0) {
+    if (roleId) {
       queryBuilder
         .innerJoin('user.roles', 'filterRole')
-        .where('filterRole.id IN (:...roleIds)', { roleIds });
+        .where('filterRole.id = :roleId', { roleId });
     }
 
     queryBuilder.take(limit).skip(offset);

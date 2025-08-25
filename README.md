@@ -32,7 +32,7 @@ npm run seed
 ## 4. Available Endpoints
 
 ### Users
-- `GET http://localhost:8000/users?limit=10&offset=0&roleIds=1` - get all users (with pagination and role filtering)
+- `GET http://localhost:8000/users?limit=10&offset=0&roleId=1` - get all users (with pagination and role filtering)
 - `GET http://localhost:8000/users/:id` - get user by ID
 - `POST http://localhost:8000/users` - create new user
 - `PATCH http://localhost:8000/users/:id` - update user data (name, email)
@@ -45,7 +45,7 @@ npm run seed
 ### Query Parameters
 - `limit` (optional) - number of items to return (default: 10, min: 1)
 - `offset` (optional) - number of items to skip (default: 0, min: 0)
-- `roleIds` (optional) - array of role IDs to filter users by (e.g. roleIds=1,2,3)
+- `roleId` (optional) - role ID to filter users by (e.g. roleId=1)
 
 ## Stop
 ```bash
